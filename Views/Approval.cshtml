@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Approval";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Head of Department and Operations approval form</p>
+
+@model VacationRequest
+
+<form asp-action="Approve" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="HeadOfDepartmentApproval">Head of Department Approval:</label>
+        <input asp-for="HeadOfDepartmentApproval" class="form-control" />
+        <span asp-validation-for="HeadOfDepartmentApproval" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="OperationsApproval">Operations Approval:</label>
+        <input asp-for="OperationsApproval" class="form-control" />
+        <span asp-validation-for="OperationsApproval" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Approve</button>
+</form>
